@@ -1,105 +1,142 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7fa;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/* Overall app container */
+.App {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #f0f3f9; /* A soft background color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.wallet-interface {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-h1 {
+/* Main Title */
+.App > h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #3e4462;
+  font-weight: 700;
 }
 
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.card h2 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 1.4rem;
-  color: #007bff;
-}
-
-input {
-  width: 100%;
-  padding: 10px 14px;
-  margin-bottom: 14px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  font-size: 1rem;
-}
-
-input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 8px rgba(0,123,255,0.3);
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+/* Step Container Card */
+.step-container {
+  background: #ffffff;
   border-radius: 8px;
-  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Step Container Headings */
+.step-container h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #3e4462;
+  font-weight: 600;
+}
+
+/* Paragraph spacing within steps */
+.step-container p {
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: #545a77;
+}
+
+/* Labels and inputs */
+.step-container label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 500;
+  color: #3e4462;
+}
+
+/* Text/Number Inputs */
+.step-container input[type="text"],
+.step-container input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid #dcdff1;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #3e4462;
+  background-color: #f9faff;
+}
+
+.step-container input[type="text"]:focus,
+.step-container input[type="number"]:focus {
+  outline: none;
+  border-color: #9ca7e6;
+  background-color: #ffffff;
+}
+
+/* UTXO Outputs Section */
+.outputs-section {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f9fafc;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+}
+
+/* Each individual output row */
+.output-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+button {
+  background-color: #6875f5;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #5966df;
 }
 
-.alert {
-  padding: 10px;
-  border-radius: 6px;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  text-align: center;
+button:active {
+  background-color: #4c58c2;
 }
 
-.alert.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.alert.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.wallet-info {
-  background-color: #eef3f9;
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  word-break: break-all;
-}
-
-code {
-  font-family: monospace;
+/* Smaller explanatory text for Relationship note, etc. */
+.field-note {
   font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+  font-style: italic;
 }
 
-.transaction-section {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
+/* Validation Message */
+.validation-message {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Media Query (Optional) */
+@media (max-width: 576px) {
+  .step-container {
+    padding: 1rem;
+  }
+  
+  .outputs-section {
+    padding: 0.75rem;
+  }
+  
+  button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
